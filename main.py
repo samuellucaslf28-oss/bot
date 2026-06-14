@@ -364,7 +364,8 @@ async def verified_count(bot_id: str):
 # ─────────────────────────────────────────────────────────────────────────────
 
 @sio.event
-async def connect(sid, environ):
+async def connect(sid, environ, auth):
+    # Aceitar qualquer conexão — autenticação é feita pelo identify event
     logger.info(f"[SIO] Conectado: {sid}")
 
 
